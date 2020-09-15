@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link, Switch, NavLink } from 'react-rou
 import Login from './Components/Login';
 import Register from './Components/FriendsList';
 import FriendsList from './Components/FriendsList';
+import PrivateRoute from './Components/PrivateRoute';
 
 function App() {
   
@@ -18,7 +19,7 @@ function App() {
         <div>
           <Switch>
             <Route path='/login' component={Login}/>
-            <Route path='/friendslist' component={FriendsList}/>
+            <PrivateRoute exact path='/friendsList' component={FriendsList}/>
           </Switch>
         </div>
     </Router>
