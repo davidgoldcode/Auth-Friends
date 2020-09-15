@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Switch, NavLink } from 'react-router-dom';
 import Login from './Components/Login';
-import Register from './Components/Register';
+import Register from './Components/FriendsList';
+import FriendsList from './Components/FriendsList';
 
 function App() {
   
@@ -11,13 +12,13 @@ function App() {
     <Router>
       <header className='header'>
         <NavLink to='/login'> Login </NavLink>
-        <NavLink to='/register'> Register </NavLink>
+        <NavLink to='/friendslist'> Friends List </NavLink>
       </header>
 
         <div>
           <Switch>
             <Route path='/login' component={Login}/>
-            <Route path='/register' component={Register}/>
+            <Route path='/friendslist' component={FriendsList}/>
           </Switch>
         </div>
     </Router>
