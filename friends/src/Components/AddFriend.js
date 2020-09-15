@@ -16,6 +16,7 @@ class AddFriend extends React.Component {
         this.setState({
             info: {
                 ...this.state.info,
+                id: new Date(), 
                 [evt.target.name]: evt.target.value,
             }
         })
@@ -32,12 +33,26 @@ class AddFriend extends React.Component {
     render(){
         return (
             <div>
-                <form onSubmit={null}>
+                <form onSubmit={this.onSubmit}>
                     <input 
                     type='text'
                     name='name'
                     placeholder='Your name'
                     value={this.state.info.name}
+                    onChange={this.changeHandler}
+                    />
+                    <input 
+                    type='number'
+                    name='age'
+                    placeholder='Your age'
+                    value={this.state.info.age}
+                    onChange={this.changeHandler}
+                    />
+                    <input 
+                    type='text'
+                    name='email'
+                    placeholder='Your email'
+                    value={this.state.info.email}
                     onChange={this.changeHandler}
                     />
                     <button>Submit</button>
