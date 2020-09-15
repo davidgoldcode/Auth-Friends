@@ -20,13 +20,13 @@ const FriendsList = () => {
         <div>
             {friends.map((item) => (
                 
-                <div id={item.id}>
-                    <h1>{item.name}</h1>
+                <div className='friends-list' id={item.id}>
+                    <h3>{item.name}</h3>
                     <h3>{item.age}</h3>
                     <h3>{item.email}</h3>
                 </div>
             ))}
-            <AddFriend />
+            <AddFriend setFriends={setFriends}/>
         </div>
     );
 }

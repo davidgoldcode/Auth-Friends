@@ -15,7 +15,6 @@ function App() {
         <NavLink className='navlink' to='/login'> Login </NavLink>
         <NavLink className='navlink' to='/friendslist'> Friends List </NavLink>
       </header>
-      <h1> Welcome! </h1>
 
         <div>
           <Switch>

@@ -32,7 +32,7 @@ class AddFriend extends React.Component {
 
     render(){
         return (
-            <div>
+            <div className='add-friend'>
                 <form onSubmit={this.onSubmit}>
                     <input 
                     type='text'
