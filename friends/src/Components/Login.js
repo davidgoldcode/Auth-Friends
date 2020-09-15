@@ -1,4 +1,5 @@
 import React from 'react';
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 class Login extends React.Component {
     
@@ -20,9 +21,24 @@ class Login extends React.Component {
         });
     };
 
+    submitHandler = (evt) => {
+        evt.preventDefault();
+        axiosWithAuth() 
+            .post('/api/login', this.state.credentials)
+            .then(res => {
+                localStorage.setItem('token', res.data.payload);
+                this.props.history.push('/FriendsList')
+            })
+            .catch(err => {
+                this.setState({
+                    error: err.response.data.error,            
+                })
+            })
+    }
+
     render() {
         return (
-            <form>
+            <form onSubmit={this.submitHandler}>
                 <input
                 type='text'
                 name='username'
