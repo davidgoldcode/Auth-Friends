@@ -57,6 +57,7 @@ class Login extends React.Component {
                     className='sign-input'
                     />
                 <button>Log In</button>
+                <h6>{this.state.error ? this.state.error : null}</h6>
                 </form>
             </div>
         );
